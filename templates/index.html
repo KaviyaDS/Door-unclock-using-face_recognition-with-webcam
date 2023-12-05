@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/691/407/688/don-t-breathe-crime-horror-thriller-wallpaper-preview.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            text-align: center;
+            color: #fff;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the form background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: black; /* Set the label text color to black */
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #005f80;
+        }
+
+        p {
+            color: #008CBA;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #008CBA;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="POST">
+        <label for="password">Owner's Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    {% if password_is_correct %}
+        <p>Password is correct.</p>
+        <a href="{{ url_for('capture') }}">Capture Image</a>
+    {% endif %}
+</body>
+</html> 

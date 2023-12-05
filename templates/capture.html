@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CAPTURING THE IMAGE</title>
+    <style>
+        body {
+          background-image: url('https://i.pinimg.com/736x/88/33/77/8833779e5f083e2ca9eae774eb1a2f3b.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center center;
+          text-align: center;
+          font-family: Arial, sans-serif;
+        }
+        #header {
+          background-color: brown;
+          padding: 20px;
+          width: 100%;
+          margin: 0; /* Remove top and bottom margin to reduce the gap */
+        }
+        #header h1 {
+          color: white;
+          font-weight: bold;
+          margin: 0; /* Remove top and bottom margin to reduce the gap */
+        }
+        #container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin-top: -20px; /* Adjust the top margin to reduce the gap */
+        }
+        #video_feed {
+          width: 640px;
+          height: 480px;
+        }
+        #capture_button {
+          background-color: burlywood;
+          color: black;
+          border: none;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 10px;
+          cursor: pointer;
+          border-radius: 50%;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Capture Image</h1>
+    </div>
+    <div id="container">
+      <img id="video_feed" src="{{ url_for('video_feed') }}">
+      <form method="POST">
+        <label for="user_name" style="font-weight:bolder; color: black;">Your Name:</label> <!-- Make the label font bold and set the color to blue -->
+        <input type="text" name="user_name" required>
+        <button type="submit" id="capture_button">Capture</button>
+      </form>
+    </div>
+  </body>
+</html>
